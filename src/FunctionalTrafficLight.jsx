@@ -5,7 +5,7 @@ export const FunctionalTrafficLight = () => {
   const [colorIndex, setColorIndex] = useState(0)
 
   const nextStateButtonFunction = () => {
-    colorIndex < 2 ? setColorIndex(colorIndex + 1) : setColorIndex(colorIndex - 2)
+    colorIndex < 2 ? setColorIndex(colorIndex + 1) : setColorIndex(0)
   }
 
   return (
@@ -14,9 +14,9 @@ export const FunctionalTrafficLight = () => {
       <div className="traffic-light">
         {/* Background color can be black | yellow | red | green */}
 
-        <div className={`circle black ${colorIndex === 0 ? 'red' : ''}`}></div>
+        <div className={`circle black ${colorIndex === 2 ? 'red' : ''}`}></div>
         <div className={`circle black ${colorIndex === 1 ? 'yellow' : ''}`}></div>
-        <div className={`circle black ${colorIndex === 2 ? 'green' : ''}`}></div>
+        <div className={`circle black ${colorIndex === 0 ? 'green' : ''}`}></div>
       </div>
       <button className="next-state-button"
         onClick={() => nextStateButtonFunction()}
